@@ -19,9 +19,11 @@ module.exports = {
         target: 'http://127.0.0.1:7777'
 
       },
+      // 以/api/cms开头的请求，代理请求http://localhost:31001
       '/api/cms': {
         target: 'http://localhost:31001',
         pathRewrite: {
+          //实际请求去掉/api
           '^/api': ''
         }
         //target: 'http://127.0.0.1:50201'
